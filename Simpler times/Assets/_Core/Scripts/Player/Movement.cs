@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
     
     private Vector2 _horizontalMovementInput;
     private float _horizontalMovement;
-    private int _speed;
+    private int _speed = 500;
 
     private void Start()
     {
