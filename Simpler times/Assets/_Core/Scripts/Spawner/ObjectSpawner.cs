@@ -19,7 +19,6 @@ public class ObjectSpawner : MonoBehaviour
             Vector2 positionToSpawn = new Vector2(randomIndex, transform.position.y);
             Instantiate(objectToSpawn, positionToSpawn, Quaternion.identity);
 
-
         }
 
     }
