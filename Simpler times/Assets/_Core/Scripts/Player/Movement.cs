@@ -5,8 +5,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D _rb;
     
     private Vector2 _horizontalMovementInput;
-    private float _horizontalMovement;
-    private int _speed = 500;
+    [SerializeField] private int _speed = 400;
 
     private void Start()
     {

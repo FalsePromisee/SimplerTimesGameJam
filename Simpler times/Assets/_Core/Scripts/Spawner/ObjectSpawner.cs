@@ -3,22 +3,14 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject objectToSpawn;
-
-    private void Start()
-    {
-        StartCoroutine(SpawnObject());
-    }
-
-    private IEnumerator SpawnObject()
+    protected IEnumerator SpawnObject(GameObject objectToSpawn, float delayToSpawn)
     {
         while (true)
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(delayToSpawn);
             int randomIndex = Random.Range(-7, 8);
             Vector2 positionToSpawn = new Vector2(randomIndex, transform.position.y);
             Instantiate(objectToSpawn, positionToSpawn, Quaternion.identity);
-
         }
 
     }

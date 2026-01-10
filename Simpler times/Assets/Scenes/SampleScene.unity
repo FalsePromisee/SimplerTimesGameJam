@@ -469,6 +469,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1215411155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1215411157}
+  - component: {fileID: 1215411156}
+  m_Layer: 0
+  m_Name: BadSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1215411156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215411155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c5ec1ee6644e045830085c9650599a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoodObjectSpawner
+  goodObjectToSpawn: {fileID: 1206771506389408274, guid: d3fed544a8d51194d87c74f319071c6d, type: 3}
+  delay: 4
+--- !u!4 &1215411157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215411155}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1338639287
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,27 +524,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1338639289}
-  - component: {fileID: 1338639288}
+  - component: {fileID: 1338639290}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: GoodSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1338639288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338639287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 758352b610a610c44abcbfff6c092f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawner
-  objectToSpawn: {fileID: 6566897588843452186, guid: d3f1933f7f3bd6b428f8be666ce2e8e2, type: 3}
 --- !u!4 &1338639289
 Transform:
   m_ObjectHideFlags: 0
@@ -514,6 +547,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1338639290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338639287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c5ec1ee6644e045830085c9650599a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoodObjectSpawner
+  goodObjectToSpawn: {fileID: 6566897588843452186, guid: d3f1933f7f3bd6b428f8be666ce2e8e2, type: 3}
+  delay: 2
 --- !u!1 &1573239977
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfadb3094d72441209a0bcd12f9234f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
+  _speed: 450
 --- !u!70 &1980512303
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -739,3 +787,4 @@ SceneRoots:
   - {fileID: 1022383591}
   - {fileID: 1980512305}
   - {fileID: 1338639289}
+  - {fileID: 1215411157}
