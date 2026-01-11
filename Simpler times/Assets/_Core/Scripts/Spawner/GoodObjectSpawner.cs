@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GoodObjectSpawner : ObjectSpawner
@@ -9,4 +10,5 @@ public class GoodObjectSpawner : ObjectSpawner
     {
         StartCoroutine(SpawnObject(goodObjectToSpawn, delay));
     }
+    
 }

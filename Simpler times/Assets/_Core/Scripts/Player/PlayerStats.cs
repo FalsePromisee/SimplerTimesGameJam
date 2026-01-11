@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public int Coins { get; private set; } = 0;
-    public int CollectedObjects { get; private set; } = 0;
     
-    public void GainCoins(int amount)
+    
+    private void GainCoins(int amount)
     {
         Coins += amount;
     }
@@ -20,11 +20,7 @@ public class PlayerStats : MonoBehaviour
             Coins = 0;
         }
     }
-
-    public void CollectedObject()
-    {
-        CollectedObjects++;
-    }
+    
 
 
 
@@ -32,16 +28,24 @@ public class PlayerStats : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.OnBadObjectCollected += CollectedGoodObject;
+        EventManager.OnGoodObjectCollected += CollectedGoodObject;
+        EventManager.OnBadObjectCollected += CollectedBadObject;
     }
     private void OnDisable()
     {
-        EventManager.OnBadObjectCollected -= CollectedGoodObject;
+        EventManager.OnGoodObjectCollected -= CollectedGoodObject;
+        EventManager.OnBadObjectCollected -= CollectedBadObject;
     }
 
-    private void CollectedGoodObject()
+    private void CollectedBadObject(int amount)
     {
-        GainCoins(1);
+        LoseCoins(amount);
+        Debug.Log("Coins amount: " + Coins);
+    }
+
+    private void CollectedGoodObject(int  amount)
+    {
+        GainCoins(amount);
         Debug.Log("Coins amount: " + Coins);
     }
 }

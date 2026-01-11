@@ -1,18 +1,22 @@
 using UnityEngine;
 
-public class BadObject : MonoBehaviour
+public class BadObject : MonoBehaviour, ICollectable
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.TryGetComponent<PlayerStats>(out PlayerStats player))
+        if (collision.collider.GetComponent<PlayerStats>())
         {
-            player.LoseCoins(1);
-            Debug.Log("Coint Amount: " + player.Coins);
-            Destroy(gameObject);
+            Collect();
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    public void Collect()
+    {
+        EventManager.OnBadObjectCollect(1);
+        Destroy(gameObject);
     }
 }

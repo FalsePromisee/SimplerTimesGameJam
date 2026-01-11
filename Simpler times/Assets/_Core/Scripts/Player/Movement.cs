@@ -20,6 +20,10 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.linearVelocity = new Vector2(_horizontalMovementInput.x, 0f) * (Time.fixedDeltaTime * _speed);
+        if (transform.position.x !> 9 && transform.position.x !< -9)
+        {
+            _rb.linearVelocity = new Vector2(_horizontalMovementInput.x, 0f) * (Time.fixedDeltaTime * _speed);
+        }
+        
     }
 }

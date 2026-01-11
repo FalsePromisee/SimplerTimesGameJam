@@ -8,9 +8,10 @@ public class ObjectSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(delayToSpawn);
-            int randomIndex = Random.Range(-7, 8);
+            int randomIndex = Random.Range(-7, 9);
             Vector2 positionToSpawn = new Vector2(randomIndex, transform.position.y);
             Instantiate(objectToSpawn, positionToSpawn, Quaternion.identity);
+            
         }
 
     }

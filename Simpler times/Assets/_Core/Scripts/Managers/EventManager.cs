@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public static Action OnGoodObjectCollected;
-    public static Action OnBadObjectCollected;
+    public static Action<int> OnGoodObjectCollected;
+    public static Action<int> OnBadObjectCollected;
     public static Action OnGoodObjectFellOnGround;
 
-    public static void OnGoodObjectCollect()
+    public static void OnGoodObjectCollect(int amount)
     {
-        OnBadObjectCollected?.Invoke();
+        OnGoodObjectCollected?.Invoke(amount);
     }
-    public static void OnBadObjectCollect()
+    public static void OnBadObjectCollect(int amount)
     {
-        OnGoodObjectCollected?.Invoke();
+        OnBadObjectCollected?.Invoke(amount);
     }
     public static void OnGoodObjectFallOnGround()
     {
